@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.12.5 on win32)" generated="20241113 16:28:24.856" rpa="false" schemaversion="3">
+<suite id="s1" name="TreinamentoAutomacao" source="C:\TreinamentoAutomacao">
+<suite id="s1-s1" name="Aula5" source="C:\TreinamentoAutomacao\Aula5">
+<suite id="s1-s1-s1" name="Test" source="C:\TreinamentoAutomacao\Aula5\Test">
+<suite id="s1-s1-s1-s1" name="Teste-Login" source="C:\TreinamentoAutomacao\Aula5\Test\teste-login.robot">
+<test id="s1-s1-s1-s1-t1" name="Realizar login no sankhya com usuário válido" line="10">
+<kw name="Dado que eu acesso o login do sankhya com sucesso" library="tela-login" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URBL_BASE}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20241113 16:28:25.734" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8180/mge/'.</msg>
+<status status="PASS" starttime="20241113 16:28:25.733" endtime="20241113 16:28:38.207"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20241113 16:28:38.207" endtime="20241113 16:28:38.347"/>
+</kw>
+<status status="PASS" starttime="20241113 16:28:25.732" endtime="20241113 16:28:38.347"/>
+</kw>
+<kw name="Quando informo o usuário no login" library="tela-login">
+<arg>USER_ARG=rh</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>dom:${DOM_USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241113 16:28:38.351" endtime="20241113 16:28:38.418"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>dom:${DOM_USER}</arg>
+<arg>${USER_ARG}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241113 16:28:38.420" level="INFO">Typing text 'rh' into text field 'dom:document.querySelector("sankhya-login").shadowRoot.querySelector("input#user")'.</msg>
+<status status="PASS" starttime="20241113 16:28:38.418" endtime="20241113 16:28:38.576"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>dom:${BOTAO_PROSSEGUIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241113 16:28:38.576" level="INFO">Clicking element 'dom:document.querySelector("sankhya-login").shadowRoot.querySelector("button.account-btn")'.</msg>
+<status status="PASS" starttime="20241113 16:28:38.576" endtime="20241113 16:28:38.622"/>
+</kw>
+<status status="PASS" starttime="20241113 16:28:38.347" endtime="20241113 16:28:38.622"/>
+</kw>
+<kw name="E informo a senha" library="tela-login">
+<arg>PASS_ARG=123456</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>dom:${DOM_PASS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241113 16:28:38.622" endtime="20241113 16:28:40.088"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>dom:${DOM_PASS}</arg>
+<arg>${PASS_ARG}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241113 16:28:40.088" level="INFO">Typing text '123456' into text field 'dom:document.querySelector("sankhya-login").shadowRoot.querySelector("input#password")'.</msg>
+<status status="PASS" starttime="20241113 16:28:40.088" endtime="20241113 16:28:40.190"/>
+</kw>
+<status status="PASS" starttime="20241113 16:28:38.622" endtime="20241113 16:28:40.190"/>
+</kw>
+<kw name="Entao faco o login" library="tela-login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>dom:${BOTAO_PROSSEGUIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241113 16:28:40.192" level="INFO">Clicking element 'dom:document.querySelector("sankhya-login").shadowRoot.querySelector("button.account-btn")'.</msg>
+<status status="PASS" starttime="20241113 16:28:40.191" endtime="20241113 16:28:40.244"/>
+</kw>
+<status status="PASS" starttime="20241113 16:28:40.191" endtime="20241113 16:28:40.244"/>
+</kw>
+<kw name="Valido que estou no home do sankhya" library="tela-home">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:${PESQUISAR_HOME}</arg>
+<arg>${TEMPO_ESPERA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241113 16:28:40.245" endtime="20241113 16:28:42.661"/>
+</kw>
+<status status="PASS" starttime="20241113 16:28:40.244" endtime="20241113 16:28:42.661"/>
+</kw>
+<kw name="Fecho o navegador" library="tela-login" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20241113 16:28:42.662" endtime="20241113 16:28:45.088"/>
+</kw>
+<status status="PASS" starttime="20241113 16:28:42.662" endtime="20241113 16:28:45.088"/>
+</kw>
+<tag>Login sankhya</tag>
+<status status="PASS" starttime="20241113 16:28:25.728" endtime="20241113 16:28:45.089"/>
+</test>
+<status status="PASS" starttime="20241113 16:28:24.916" endtime="20241113 16:28:45.089"/>
+</suite>
+<status status="PASS" starttime="20241113 16:28:24.910" endtime="20241113 16:28:45.098"/>
+</suite>
+<status status="PASS" starttime="20241113 16:28:24.906" endtime="20241113 16:28:45.101"/>
+</suite>
+<status status="PASS" starttime="20241113 16:28:24.862" endtime="20241113 16:28:45.107"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Login sankhya</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TreinamentoAutomacao">TreinamentoAutomacao</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Aula5">TreinamentoAutomacao.Aula5</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test">TreinamentoAutomacao.Aula5.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Teste-Login">TreinamentoAutomacao.Aula5.Test.Teste-Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
